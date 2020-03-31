@@ -1,6 +1,9 @@
 import React, {useState, createContext} from 'react';
+import MovieList from './MovieList';
 
-export const MovieProvider = () => {
+export const MovieContext = createContext();
+
+export const MovieProvider = props => {
   const [movies, setMoviews] = useState([
     {
       name: 'Harry Pooter',
@@ -18,5 +21,9 @@ export const MovieProvider = () => {
       id: 23453
     }
   ]);
-  return()
+  return(
+    <MovieContext.Provider value={'Hello'}>
+        {props.children}
+    </MovieContext.Provider>
+  )
 }
